@@ -9,7 +9,6 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - SunLayer
   - Water
   - UI
   - ProjectileLayer

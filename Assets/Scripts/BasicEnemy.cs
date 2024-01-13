@@ -49,6 +49,7 @@ public class BasicEnemy : MonoBehaviour
         if (other.gameObject.CompareTag("PlayerBullet"))
         {
             Destroy(other.gameObject);
+            Destroy(gameObject);
         }
     }
 

@@ -23,10 +23,21 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("EnemyBullet") || other.gameObject.CompareTag("PlayerBullet"))
+        if (this.CompareTag("EnemyBullet"))
         {
-            Destroy(gameObject);
+            if (other.gameObject.CompareTag("PlayerBullet"))
+            {
+                Destroy(gameObject);
+            }
         }
+        if (this.CompareTag("PlayerBullet"))
+        {
+            if (other.gameObject.CompareTag("EnemyBullet"))
+            {
+                Destroy(gameObject);
+            }
+        }
+
     }
 
     void OnBecameInvisible()

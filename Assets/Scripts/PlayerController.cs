@@ -28,4 +28,13 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = direction * speed;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("EnemyBullet"))
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);            
+        }
+    }
 }

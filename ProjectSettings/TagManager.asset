@@ -4,14 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - PlayerProjectileIgnore
+  - EnemyBullet
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
   - Water
+  - Water
   - UI
-  - ProjectileLayer
+  - 
   - 
   - 
   - 

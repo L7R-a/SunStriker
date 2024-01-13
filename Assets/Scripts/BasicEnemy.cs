@@ -43,4 +43,13 @@ public class BasicEnemy : MonoBehaviour
     {
         GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("PlayerBullet"))
+        {
+            Destroy(other.gameObject);
+        }
+    }
+
 }

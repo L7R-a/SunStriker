@@ -7,6 +7,7 @@ public class BasicEnemy : MonoBehaviour
     public float speed = 5f;
     private int direction = 1;
     public GameObject player;
+    public BasicSpawner spawner;
 
     public GameObject projectilePrefab;
     public float shootInterval = 1.0f;
@@ -15,7 +16,8 @@ public class BasicEnemy : MonoBehaviour
     private void Start()
     {
         shootTimer = shootInterval;
-        player = GameObject.Find("Sun"); // Find the game object named "Sun" and set it as the player
+        player = GameObject.Find("Sun");
+        
     }
 
     private void Update()
@@ -48,7 +50,9 @@ public class BasicEnemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PlayerBullet"))
         {
+            
             Destroy(other.gameObject);
+            spawner.currentEnemyCount--;
             Destroy(gameObject);
         }
     }

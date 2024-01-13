@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4122095973911681064}
   - component: {fileID: -6175806571182948788}
   - component: {fileID: 8741236753783110638}
-  - component: {fileID: 2737616565047778797}
+  - component: {fileID: 6793638491058981743}
   m_Layer: 0
   m_Name: PlayerProjectile
   m_TagString: PlayerBullet
@@ -149,7 +149,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
---- !u!114 &2737616565047778797
+--- !u!114 &6793638491058981743
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

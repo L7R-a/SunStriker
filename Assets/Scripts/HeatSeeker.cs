@@ -8,11 +8,8 @@ public class HeatSeeker : MonoBehaviour
     public float speed = 5f;
     public float selfDestructTime = 5f;
 
-    private float timer;
-
     private void Start()
     {
-        timer = selfDestructTime;
         player = GameObject.Find("Sun");
     }
 
@@ -26,19 +23,22 @@ public class HeatSeeker : MonoBehaviour
 
         // Move towards the player
         transform.position += direction * speed * Time.deltaTime;
-
-        // Self-destruct timer
-        timer -= Time.deltaTime;
-        if (timer <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject == player)
         {
+            Destroy(gameObject);
+        }
+    }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("PlayerBullet"))
+        {
+            
+            Destroy(other.gameObject);
             Destroy(gameObject);
         }
     }

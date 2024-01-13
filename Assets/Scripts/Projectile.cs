@@ -21,6 +21,19 @@ public class Projectile : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("EnemyBullet") || other.gameObject.CompareTag("PlayerBullet"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
+
     // Update is called once per frame
     void Update()
     {

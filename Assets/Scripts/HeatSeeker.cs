@@ -13,6 +13,7 @@ public class HeatSeeker : MonoBehaviour
     private void Start()
     {
         timer = selfDestructTime;
+        player = GameObject.Find("Sun");
     }
 
     private void Update()

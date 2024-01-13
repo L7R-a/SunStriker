@@ -8,8 +8,11 @@ public class BasicSpawner : MonoBehaviour
     public float spawnInterval = 2f;
     public int maxEnemies = 5;
 
+    public BasicEnemy enemyScript;
+    public GameObject enemy;
+
     private float timer;
-    private int currentEnemyCount;
+    public int currentEnemyCount;
 
     private void Start()
     {
@@ -29,7 +32,11 @@ public class BasicSpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+        enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+        enemyScript = enemy.GetComponent<BasicEnemy>();
+
+        enemyScript.spawner = this;
+        
         currentEnemyCount++;
     }
 

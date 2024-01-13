@@ -7,11 +7,8 @@ public class PlayerController : MonoBehaviour
     // Character body
     [SerializeField] private float speed = 3f;
     private Rigidbody2D rb;
-    private Vector2 direction;
+    private Vector3 direction;
 
-    //Projectile Spawn
-    public Projectile projectilePrefab;
-    public Transform launch;
 
     void Start()
     {
@@ -21,13 +18,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        //Character Movement
+        direction = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         direction.Normalize();
-        //Launch Projectile
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Instantiate(projectilePrefab, launch.position, transform.rotation);
-        }
+
     }
 
     void FixedUpdate()

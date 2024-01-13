@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.499959, g: 1, b: 0.2783019, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   player: {fileID: 7936864138643113601, guid: 1a1d5cdd262b4354890d308738a78304, type: 3}
+  spawner: {fileID: 0}
   projectilePrefab: {fileID: 2974040607354462827, guid: f5a87a23287f1d640bea762173649318, type: 3}
   shootInterval: 1
 --- !u!61 &-2031047434351180071

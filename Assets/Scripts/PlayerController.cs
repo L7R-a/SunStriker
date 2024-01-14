@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
         ren.material.color = Color.red;
         gameObject.transform.localScale += new Vector3(4f,4f,4f);
         yield return new WaitForSeconds(5f);
-        if (gameObject == null) yield return null;
+        if (this == null) yield return null;
         else
         {
             ren.material.color = Color.yellow;
@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
     {
         ren.material.color = Color.black;
         yield return new WaitForSeconds(5f);
-        if (gameObject == null) yield return null;
+        if (this == null) yield return null;
         ren.material.color = Color.yellow;
     }
 
@@ -119,6 +119,7 @@ public class PlayerController : MonoBehaviour
         isHaste = true;
         yield return new WaitForSeconds(5f);
         isHaste = false;
+        ren.material.color = Color.yellow;
     }
 
     public IEnumerator giveSlows()
@@ -126,6 +127,7 @@ public class PlayerController : MonoBehaviour
         isSlows = true;
         yield return new WaitForSeconds(5f);
         isSlows = false;
+        ren.material.color = Color.yellow;
     }
 
     public IEnumerator zoomIn()
@@ -133,8 +135,15 @@ public class PlayerController : MonoBehaviour
         ren.material.color = Color.red;
         cam.m_Lens.OrthographicSize = 10f;
         yield return new WaitForSeconds(15f);
-        if (gameObject == null) yield return null;
-        ren.material.color = Color.yellow;
+        if (this == null)
+        {
+            yield return null;
+        }
+        else
+        {
+            ren.material.color = Color.yellow;
+        }
+
     }
 
     public IEnumerator zoomOut()
@@ -143,7 +152,7 @@ public class PlayerController : MonoBehaviour
         cam.m_Lens.OrthographicSize = 30f;
         yield return new WaitForSeconds(15f);
         cam.m_Lens.OrthographicSize = mainZoom;
-        if (gameObject == null)
+        if (this == null)
         {
             yield return null;
         }

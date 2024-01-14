@@ -70,38 +70,49 @@ public class GameManager : MonoBehaviour
         switch (command) 
         {
             case "die":
+                if (player == null) return;
                 player.die();
                 break;
 
             case "shield":
+                if (player == null) return;
                 player.shield();
                 break;
             case "shiny sunstrike":
+                if (player == null) return;
                 player.deleteAll();
                 break;
             case "random":
+                if (player == null) return;
                 Command(commandList[helpI]);
                 break;
             case "help":
+                if (player == null) return;
                 SendMessageToChat($"Try -> {commandList[helpI]}");
                 break;
             case "big":
-               StartCoroutine(player.bigger());
+                if (player == null) return;
+                StartCoroutine(player.bigger());
                 break;
             case "haste":
+                if (player == null) return;
                 StartCoroutine(player.giveHaste());
                 break;
 
             case "slows":
+                if (player == null) return;
                 StartCoroutine(player.giveSlows());
                 break;
             case "invi":
+                if (player == null) return;
                 StartCoroutine(player.invisible());
                 break;
             case "zoomi":
+                if (player == null) return;
                 StartCoroutine(player.zoomIn());
                 break;
             case "zoomo":
+                if (player == null) return;
                 StartCoroutine(player.zoomOut());
                 break;
             default:

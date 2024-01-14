@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     // Character body
     [SerializeField] private float speed = 3f;
     [SerializeField] private Canvas canvas;
+    [SerializeField] private Timer tim;
     private Rigidbody2D rb;
     private Vector3 direction;
 
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
             gameObject.SetActive(false);
             canvas.enabled = true;
+            tim.timeIsRunning = false;
         }
     }
 }

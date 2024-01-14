@@ -2,22 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicEnemy : MonoBehaviour
+public class ShotGun : MonoBehaviour
 {
+    
     public float speed = 5f;
     public GameObject player;
     public GameObject projectilePrefab;
     public float shootInterval = 1.0f;
     private float shootTimer;
-
+    
+    public float arcAngle = 45f;
+    
     private void Start()
     {
-        shootTimer = shootInterval;
         player = GameObject.Find("Sun");
+        shootTimer = shootInterval;
         if (!player) Destroy(gameObject);
-        
     }
-
     private void Update()
     {
         if (!player) Destroy(gameObject);
@@ -41,10 +42,15 @@ public class BasicEnemy : MonoBehaviour
             }
         }
     }
-
+    
     void ShootProjectile()
     {
-        GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
+        // Instantiate the first projectile directly in the current direction
+        Instantiate(projectilePrefab, transform.position, transform.rotation);
+
+        // Instantiate the second and third projectiles with a simple rotation
+        Instantiate(projectilePrefab, transform.position, Quaternion.Euler(0, 0, transform.eulerAngles.z + 45));
+        Instantiate(projectilePrefab, transform.position, Quaternion.Euler(0, 0, transform.eulerAngles.z - 45));
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -56,5 +62,4 @@ public class BasicEnemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }

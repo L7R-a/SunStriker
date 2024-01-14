@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Meteor : MonoBehaviour
@@ -10,7 +11,13 @@ public class Meteor : MonoBehaviour
     {
         player = GameObject.Find("Sun");
         direction = (player.transform.position - transform.position).normalized;
+        if (!player) Destroy(gameObject);
         Destroy(gameObject, 10f); 
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Destroy(other.gameObject);
     }
 
     void Update()

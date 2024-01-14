@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -161,4 +161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2266ba3e364e4ca49986c08d6fbdd8b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+  force: 20
+=======
+  point: {fileID: 4166845248059287737, guid: 121a3b639e0b4854db030069bfe65462, type: 3}
   force: 10
+>>>>>>> Stashed changes

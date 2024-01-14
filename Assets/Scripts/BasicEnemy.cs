@@ -50,7 +50,7 @@ public class BasicEnemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PlayerBullet"))
         {
-            
+
             Destroy(other.gameObject);
             spawner.currentEnemyCount--;
             Destroy(gameObject);

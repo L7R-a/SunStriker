@@ -102,7 +102,12 @@ MonoBehaviour:
   player: {fileID: 7936864138643113601, guid: 1a1d5cdd262b4354890d308738a78304, type: 3}
   spawner: {fileID: 0}
   projectilePrefab: {fileID: 2974040607354462827, guid: f5a87a23287f1d640bea762173649318, type: 3}
+<<<<<<< Updated upstream
   shootInterval: 1
+=======
+  shootInterval: 2
+  point: {fileID: 4166845248059287737, guid: 121a3b639e0b4854db030069bfe65462, type: 3}
+>>>>>>> Stashed changes
 --- !u!61 &-2031047434351180071
 BoxCollider2D:
   m_ObjectHideFlags: 0

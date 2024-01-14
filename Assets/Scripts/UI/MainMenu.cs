@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadGame()
     {
-        SceneManager.LoadScene("Main_Scene");
+        SceneManager.LoadScene("MergeDaDi");
     }
     public void LoadMenu()
     {

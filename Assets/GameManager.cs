@@ -76,7 +76,8 @@ public class GameManager : MonoBehaviour
             case "shield":
                 player.shield();
                 break;
-            case "Shinning sunstrike":
+            case "shiny sunstrike":
+                player.deleteAll();
                 break;
             case "random":
                 Command(commandList[helpI]);

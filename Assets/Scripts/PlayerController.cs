@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
 {
 
     float timer;
-    public Projectile pj;
     // Character body
     [SerializeField] private float speed = 3f;
     [SerializeField] private Canvas canvas;
@@ -76,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator bigger()
     {
-        ren.material.color = Color.green;
+        ren.material.color = Color.red;
         gameObject.transform.localScale += new Vector3(4f,4f,4f);
         yield return new WaitForSeconds(5f);
         ren.material.color = Color.yellow;
@@ -115,5 +114,24 @@ public class PlayerController : MonoBehaviour
         isSlows = true;
         yield return new WaitForSeconds(5f);
         isSlows = false;
+    }
+
+    public void deleteAll()
+    {
+        foreach (BasicEnemy o in Object.FindObjectsOfType<BasicEnemy>())
+        {
+            o.gameObject.SetActive(false);
+            Destroy(o);
+        }
+        foreach (HeatSeeker o in Object.FindObjectsOfType<HeatSeeker>())
+        {
+            o.gameObject.SetActive(false);
+            Destroy(o);
+        }
+        foreach (Meteor o in Object.FindObjectsOfType<Meteor>())
+        {
+            o.gameObject.SetActive(false);
+            Destroy(o);
+        }
     }
 }

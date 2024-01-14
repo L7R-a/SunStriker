@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main_Scene.unity
     guid: db5c1a326535d7641a6514f22cc9cadd
+  - enabled: 1
+    path: Assets/Scenes/MergeDaDi.unity
+    guid: b10c609eb804bdc428b25fa18f19226b
   m_configObjects: {}

@@ -10,13 +10,18 @@ public class Meteor : MonoBehaviour
     void Awake()
     {
         player = GameObject.Find("Sun");
-        if (!player) Destroy(gameObject);
+        if (!player)
+        {
+            Destroy(gameObject);
+            return;
+        }
         direction = (player.transform.position - transform.position).normalized;
         Destroy(gameObject, 20f); 
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if(!other.CompareTag("background"))
         Destroy(other.gameObject);
     }
 

@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
     public void Command(string command)
     {
         var rnd = new System.Random();
-        List<string> commandList = new List<string>(){"die", "shield", "Shinning sunstrike", "big", "slows", "haste", "random", "invi"};
+        List<string> commandList = new List<string>(){"die", "shield", "Shinning sunstrike", "big", "slows", "haste", "random", "invi", "shiny sunstrike", "zoomi", "zoomo"};
 
         int helpI = rnd.Next(commandList.Count);
 
@@ -97,6 +97,12 @@ public class GameManager : MonoBehaviour
                 break;
             case "invi":
                 StartCoroutine(player.invisible());
+                break;
+            case "zoomi":
+                StartCoroutine(player.zoomIn());
+                break;
+            case "zoomo":
+                StartCoroutine(player.zoomOut());
                 break;
             default:
                 break;

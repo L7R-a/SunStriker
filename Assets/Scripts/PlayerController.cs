@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class PlayerController : MonoBehaviour
 {
 
     float timer;
+    [SerializeField] CinemachineVirtualCamera cam;
+    float mainZoom;
     // Character body
     [SerializeField] private float speed = 3f;
     [SerializeField] private Canvas canvas;
@@ -23,6 +26,8 @@ public class PlayerController : MonoBehaviour
         ren = GetComponent<Renderer>();
         canvas.enabled = false;
         rb = GetComponent<Rigidbody2D>();
+        cam.m_Lens.OrthographicSize = 17.5f;
+        mainZoom = cam.m_Lens.OrthographicSize;
     }
 
 
@@ -78,14 +83,21 @@ public class PlayerController : MonoBehaviour
         ren.material.color = Color.red;
         gameObject.transform.localScale += new Vector3(4f,4f,4f);
         yield return new WaitForSeconds(5f);
-        ren.material.color = Color.yellow;
-        gameObject.transform.localScale -= new Vector3(4f, 4f, 4f);
+        if (gameObject == null) yield return null;
+        else
+        {
+            ren.material.color = Color.yellow;
+            gameObject.transform.localScale -= new Vector3(4f, 4f, 4f);
+        }
+
+
     }
 
     public IEnumerator invisible()
     {
         ren.material.color = Color.black;
         yield return new WaitForSeconds(5f);
+        if (gameObject == null) yield return null;
         ren.material.color = Color.yellow;
     }
 
@@ -114,6 +126,34 @@ public class PlayerController : MonoBehaviour
         isSlows = true;
         yield return new WaitForSeconds(5f);
         isSlows = false;
+    }
+
+    public IEnumerator zoomIn()
+    {
+        ren.material.color = Color.red;
+        cam.m_Lens.OrthographicSize = 10f;
+        yield return new WaitForSeconds(15f);
+        if (gameObject == null) yield return null;
+        ren.material.color = Color.yellow;
+    }
+
+    public IEnumerator zoomOut()
+    {
+        ren.material.color = Color.green;
+        cam.m_Lens.OrthographicSize = 30f;
+        yield return new WaitForSeconds(15f);
+        cam.m_Lens.OrthographicSize = mainZoom;
+        if (gameObject == null)
+        {
+            yield return null;
+        }
+        else
+        {
+            ren.material.color = Color.yellow;
+        }
+
+        
+
     }
 
     public void deleteAll()

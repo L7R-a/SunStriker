@@ -222,9 +222,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 52695186}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1507,9 +1507,9 @@ GameObject:
   - component: {fileID: 767101802}
   - component: {fileID: 767101804}
   - component: {fileID: 767101803}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: BG1
-  m_TagString: Untagged
+  m_TagString: background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3645,6 +3645,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4870979645509418073, guid: 1a1d5cdd262b4354890d308738a78304, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 923327119}
     - target: {fileID: 4870979645509418073, guid: 1a1d5cdd262b4354890d308738a78304, type: 3}
       propertyPath: tim
       value: 

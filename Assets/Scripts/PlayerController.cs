@@ -6,12 +6,14 @@ public class PlayerController : MonoBehaviour
 {
     // Character body
     [SerializeField] private float speed = 3f;
+    [SerializeField] private Canvas canvas;
     private Rigidbody2D rb;
     private Vector3 direction;
 
 
     void Start()
     {
+        canvas.enabled = false;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -34,7 +36,8 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("EnemyBullet"))
         {
             Destroy(other.gameObject);
-            Destroy(gameObject);            
+            gameObject.SetActive(false);
+            canvas.enabled = true;
         }
     }
 }

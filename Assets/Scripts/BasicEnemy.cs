@@ -16,6 +16,7 @@ public class BasicEnemy : MonoBehaviour
         player = GameObject.Find("Sun");
         if (!player) Destroy(gameObject);
         
+
     }
 
     private void Update()

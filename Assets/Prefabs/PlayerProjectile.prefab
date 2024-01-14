@@ -161,9 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2266ba3e364e4ca49986c08d6fbdd8b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
   force: 10
-=======
-  point: {fileID: 4166845248059287737, guid: 121a3b639e0b4854db030069bfe65462, type: 3}
-  force: 30
->>>>>>> Stashed changes

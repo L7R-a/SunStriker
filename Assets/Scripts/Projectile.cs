@@ -7,7 +7,6 @@ public class Projectile : MonoBehaviour
     private Vector3 mousePos;
     private Camera mainCam;
     private Rigidbody2D rb;
-    public Points point;
     public float force;
 
     void Start()
@@ -33,16 +32,9 @@ public class Projectile : MonoBehaviour
         }
         if (this.CompareTag("PlayerBullet"))
         {
-
             if (other.gameObject.CompareTag("EnemyBullet"))
             {
                 Destroy(gameObject);
-            }
-            else
-            {
-                point.count++;
-
-                point.DisplayCount();
             }
         }
 

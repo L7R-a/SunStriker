@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,11 +26,20 @@ public class GameManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                SendMessageToChat(chatBox.text);
+
+                if (chatBox.text != "help")
+                {
+                    SendMessageToChat(chatBox.text);
+                    Command(chatBox.text);
+                }
+                else {
+
+                    Command(chatBox.text);
+                } 
+
                 chatBox.text = "";
             }
-        }
-
+        }  
     }
 
     public void SendMessageToChat(string text) 
@@ -42,16 +52,39 @@ public class GameManager : MonoBehaviour
         }
 
         Message newMessage = new Message();
-
         newMessage.text = text;
-
         GameObject newText = Instantiate(textObject, chatPanel.transform);
-
         newMessage.textObject = newText.GetComponent<Text>();
-
         newMessage.textObject.text = newMessage.text;
-
         messagelist.Add(newMessage);
+    }
+
+    public void Command(string command)
+    {
+        var rnd = new System.Random();
+        List<string> commandList = new List<string>(){"die", "shield", "Shinning sunstrike"};
+
+        int helpI = rnd.Next(commandList.Count);
+
+        switch (command) 
+        {
+            case "die":
+                break;
+
+            case "shield":
+                break;
+
+            case "Shinning sunstrike":
+                break;
+
+            case "help":
+                SendMessageToChat($"Try -> {commandList[helpI]}");
+                break;
+
+            default:
+                break;
+        }
+
     }
 }
 

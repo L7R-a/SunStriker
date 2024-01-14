@@ -10,9 +10,9 @@ public class Meteor : MonoBehaviour
     void Awake()
     {
         player = GameObject.Find("Sun");
-        direction = (player.transform.position - transform.position).normalized;
         if (!player) Destroy(gameObject);
-        Destroy(gameObject, 10f); 
+        direction = (player.transform.position - transform.position).normalized;
+        Destroy(gameObject, 20f); 
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -23,5 +23,13 @@ public class Meteor : MonoBehaviour
     void Update()
     {
         transform.position += direction * speed * Time.deltaTime;
+    }
+    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject == player)
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }

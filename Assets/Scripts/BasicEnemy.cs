@@ -17,7 +17,7 @@ public class BasicEnemy : MonoBehaviour
     {
         shootTimer = shootInterval;
         player = GameObject.Find("Sun");
-        
+
     }
 
     private void Update()

@@ -71,3 +71,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 .idea/.idea.SunStriker/.idea/vcs.xml
+.idea/.idea.SunStriker/.idea/indexLayout.xml
+.idea/.idea.SunStriker/.idea/workspace.xml
+*.xml

@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public int maxMessages = 25;
     public GameObject chatPanel, textObject;
     public InputField chatBox;
+    public PlayerController player;
 
     [SerializeField]
     List<Message> messagelist = new List<Message>();
@@ -62,25 +63,40 @@ public class GameManager : MonoBehaviour
     public void Command(string command)
     {
         var rnd = new System.Random();
-        List<string> commandList = new List<string>(){"die", "shield", "Shinning sunstrike"};
+        List<string> commandList = new List<string>(){"die", "shield", "Shinning sunstrike", "big", "slows", "haste", "random", "invi"};
 
         int helpI = rnd.Next(commandList.Count);
 
         switch (command) 
         {
             case "die":
+                player.die();
                 break;
 
             case "shield":
+                player.shield();
                 break;
-
             case "Shinning sunstrike":
                 break;
-
+            case "random":
+                Command(commandList[helpI]);
+                break;
             case "help":
                 SendMessageToChat($"Try -> {commandList[helpI]}");
                 break;
+            case "big":
+               StartCoroutine(player.bigger());
+                break;
+            case "haste":
+                StartCoroutine(player.giveHaste());
+                break;
 
+            case "slows":
+                StartCoroutine(player.giveSlows());
+                break;
+            case "invi":
+                StartCoroutine(player.invisible());
+                break;
             default:
                 break;
         }

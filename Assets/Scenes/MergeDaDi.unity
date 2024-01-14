@@ -742,6 +742,7 @@ MonoBehaviour:
   chatPanel: {fileID: 1309123452}
   textObject: {fileID: 3377883050590724405, guid: e5f1b0b3d2273d8469c90f8162b45951, type: 3}
   chatBox: {fileID: 995994031}
+  player: {fileID: 1485427379}
   messagelist: []
 --- !u!4 &429499832
 Transform:
@@ -1250,7 +1251,7 @@ Transform:
   m_GameObject: {fileID: 923327116}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0.048897743, y: -0.12391329, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1588,8 +1589,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_LookAt: {fileID: 1485427382}
+  m_Follow: {fileID: 1485427382}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 17.677952
@@ -1923,6 +1924,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &1485427379 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4870979645509418073, guid: 1a1d5cdd262b4354890d308738a78304, type: 3}
+  m_PrefabInstance: {fileID: 2033809585}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb752b562d79654298f9b2b7e9907d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1485427382 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4323216912722259126, guid: 1a1d5cdd262b4354890d308738a78304, type: 3}
+  m_PrefabInstance: {fileID: 2033809585}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1508374091
 GameObject:
   m_ObjectHideFlags: 0
@@ -2740,6 +2757,10 @@ PrefabInstance:
     - target: {fileID: 7936864138643113601, guid: 1a1d5cdd262b4354890d308738a78304, type: 3}
       propertyPath: m_Name
       value: Sun
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936864138643113601, guid: 1a1d5cdd262b4354890d308738a78304, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

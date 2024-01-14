@@ -162,3 +162,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 10
+  player: {fileID: 4870979645509418073, guid: 1a1d5cdd262b4354890d308738a78304, type: 3}

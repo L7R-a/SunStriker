@@ -34,15 +34,6 @@ public class BasicSpawner : MonoBehaviour
     {
         enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
         enemyScript = enemy.GetComponent<BasicEnemy>();
-
-        enemyScript.spawner = this;
-        
-        currentEnemyCount++;
     }
-
-    public void EnemyDestroyed()
-    {
-        if (currentEnemyCount > 0)
-            currentEnemyCount--;
-    }
+    
 }
